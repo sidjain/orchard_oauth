@@ -1,5 +1,5 @@
 <?php
-namespace Orchard
+namespace Orchard;
 /*
  * Abraham Williams (abraham@abrah.am) http://abrah.am
  *
