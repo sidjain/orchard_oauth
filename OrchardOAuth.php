@@ -17,7 +17,7 @@ namespace Orchard;
 //openlog("myScriptLog", LOG_PID | LOG_PERROR, LOG_LOCAL2);
 
 /* Load OAuth lib. You can find it at http://oauth.net */
-class OAuthException extends Exception {/*{{{*/
+class OAuthException extends \Exceptison {/*{{{*/
   // pass
 }/*}}}*/
 
@@ -763,7 +763,7 @@ class SimpleOAuthDataStore extends OAuthDataStore {/*{{{*/
 class OAuthUtil {/*{{{*/
   public static function urlencode_rfc3986($input) {/*{{{*/
   if (is_array($input)) {
-    return array_map(array('OAuthUtil','urlencode_rfc3986'), $input);
+    return array_map(array('Orchard\OAuthUtil','urlencode_rfc3986'), $input);
   } else if (is_scalar($input)) {
     return str_replace('+', ' ',
                          str_replace('%7E', '~', rawurlencode($input)));
@@ -911,8 +911,8 @@ class OrchardOAuth {/*{{{*/
     curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 30);
     curl_setopt($ch, CURLOPT_TIMEOUT, 30);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-    $mydebug = fopen('/var/log/curl.txt','a+');
-	curl_setopt($ch, CURLOPT_STDERR, $mydebug);
+    //$mydebug = fopen('/var/log/curl.txt','a+');
+//	curl_setopt($ch, CURLOPT_STDERR, $mydebug);
     curl_setopt($ch, CURLOPT_VERBOSE, TRUE);
 
     //////////////////////////////////////////////////
