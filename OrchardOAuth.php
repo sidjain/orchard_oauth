@@ -17,7 +17,7 @@ namespace Orchard;
 //openlog("myScriptLog", LOG_PID | LOG_PERROR, LOG_LOCAL2);
 
 /* Load OAuth lib. You can find it at http://oauth.net */
-class OAuthException extends \Exceptison {/*{{{*/
+class OAuthException extends \Exception {/*{{{*/
   // pass
 }/*}}}*/
 
